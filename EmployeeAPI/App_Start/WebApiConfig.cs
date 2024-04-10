@@ -1,7 +1,10 @@
-﻿using System;
+﻿using EmployeeAPI.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Unity;
+using Unity.Lifetime;
 
 namespace EmployeeAPI
 {

@@ -12,8 +12,6 @@ namespace EmployeeAPI.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            var repo = new EmployeeRepository(new EmployeeContext());
-            var teste = repo.Get();
             return View();
         }
     }

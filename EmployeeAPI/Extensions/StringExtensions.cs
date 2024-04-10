@@ -9,8 +9,7 @@ namespace EmployeeAPI.Extensions
     {
         public static bool Contains(this string text, string substring, StringComparison comparison)
         {
-            throw new NotImplementedException();
-            //return text.Equals()
+            return text.IndexOf(substring, comparison) >= 0;
         }
     }
 }

@@ -14,6 +14,10 @@ namespace EmployeeAPI.Domain
 
         Employee Add(Employee employee);
 
-        Employee Remove(Employee employee);
+        Employee Delete(int id);
+
+        Employee Delete(Employee employee);
+
+        Employee Update(Employee employee);
     }
 }

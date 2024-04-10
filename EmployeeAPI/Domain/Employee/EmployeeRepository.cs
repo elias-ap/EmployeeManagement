@@ -22,6 +22,24 @@ namespace EmployeeAPI.Domain
             return employee;
         }
 
+        public Employee Delete(int id)
+        {
+            var employee = _context.Employees.Find(id);
+            if (employee is null)
+                return null;
+
+            _context.Employees.Remove(employee);
+            _context.SaveChanges();
+            return employee;
+        }
+
+        public Employee Delete(Employee employee)
+        {
+            employee = _context.Employees.Remove(employee);
+            _context.SaveChanges();
+            return employee;
+        }
+
         public IEnumerable<Employee> GetByFilter(Func<Employee, bool> filter)
         {
             return _context.Employees.Where(filter);
@@ -37,9 +55,9 @@ namespace EmployeeAPI.Domain
             return _context.Employees.Find(id);
         }
 
-        public Employee Remove(Employee employee)
+        public Employee Update(Employee employee)
         {
-            employee = _context.Employees.Remove(employee);
+            _context.Entry(employee).State = EntityState.Modified;
             _context.SaveChanges();
             return employee;
         }
